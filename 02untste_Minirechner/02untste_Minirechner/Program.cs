@@ -9,7 +9,18 @@ namespace _02untste_Minirechner
     {
         static void Main(string[] args)
         {
+            int Zahl1 = 0;
+            int Zahl2 = 0;
+            String Operant = "";
             Titelerstellen("Minirechner","", 0);
+            Console.Write("Bitte eine Zahl eingeben: ");
+            Zahl1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Bitte einen Operant (+/-/*/:) eingeben: ");
+            Operant =Console.ReadLine();
+            Console.Write("Bitte eine Zahl eingeben: ");
+            Zahl2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Das Ergebnis ist: ");
+            Console.WriteLine(Convert.ToString(rechnen(Zahl1, Operant, Zahl2)));
             Console.ReadKey();
         }
         /// <summary>
@@ -43,6 +54,17 @@ namespace _02untste_Minirechner
                 Console.Write("-");
             }
             
+        }
+        static int rechnen(int Num1, string Op, int Num2)
+        {
+            int Ergebniss = 0;
+            if (Op == "+")
+                Ergebniss=Addieren(Num1, Num2);
+            return Ergebniss;
+        }
+        static int Addieren(int Summand1, int Summand2)
+        {
+            return (Summand1 + Summand2);
         }
     }
 }
