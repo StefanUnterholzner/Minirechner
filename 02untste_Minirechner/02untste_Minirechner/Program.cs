@@ -55,16 +55,29 @@ namespace _02untste_Minirechner
             }
             
         }
+        /// <summary>
+        /// Kann die vier Grundrechnungsarten rechenen
+        /// </summary>
+        /// <param name="Num1">Zahl vor dem Rechenzeichen</param>
+        /// <param name="Op">Rechenzeichen: "+" oder "-" oder ":" oder "*"</param>
+        /// <param name="Num2">Zahl nach dem Rechenzeichen</param>
+        /// <returns>Ergebniss</returns>
         static int rechnen(int Num1, string Op, int Num2)
         {
             int Ergebniss = 0;
             if (Op == "+")
                 Ergebniss=Addieren(Num1, Num2);
+            if (Op=="-")
+                Ergebniss = Subtrahieren(Num1, Num2);
             return Ergebniss;
         }
         static int Addieren(int Summand1, int Summand2)
         {
             return (Summand1 + Summand2);
+        }
+        static int Subtrahieren(int Minuend, int Subtrahend)
+        {
+            return (Minuend - Subtrahend);
         }
     }
 }
