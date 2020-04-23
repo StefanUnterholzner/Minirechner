@@ -71,6 +71,8 @@ namespace _02untste_Minirechner
                 Ergebniss = Subtrahieren(Num1, Num2);
             if (Op=="*")
                 Ergebniss = Mulriplizieren(Num1, Num2);
+            if (Op == ":")
+                Ergebniss = Diviedieren(Num1, Num2);
             return Ergebniss;
         }
         static int Addieren(int Summand1, int Summand2)
@@ -84,6 +86,10 @@ namespace _02untste_Minirechner
         static int Mulriplizieren(int Faktor1, int Faktor2)
         {
             return (Faktor1* Faktor2);
+        }
+        static int Diviedieren(int Dividend, int Divisor)
+        {
+            return (Dividend / Divisor);
         }
     }
 }
