@@ -11,17 +11,28 @@ namespace _02untste_Minirechner
         {
             int Zahl1 = 0;
             int Zahl2 = 0;
+            bool Weiter = false;
             String Operant = "";
-            Titelerstellen("Minirechner","", 0);
-            Console.Write("Bitte eine Zahl eingeben: ");
-            Zahl1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Bitte einen Operant (+/-/*/:) eingeben: ");
-            Operant =Console.ReadLine();
-            Console.Write("Bitte eine Zahl eingeben: ");
-            Zahl2 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Das Ergebnis ist: ");
-            Console.WriteLine(Convert.ToString(rechnen(Zahl1, Operant, Zahl2)));
-            Console.ReadKey();
+            do
+            {
+                Console.Clear();
+                Weiter = false;
+                Titelerstellen("Minirechner", "", 0);
+                Console.Write("Bitte eine Zahl eingeben: ");
+                Zahl1 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Bitte einen Operant (+/-/*/:) eingeben: ");
+                Operant = Console.ReadLine();
+                Console.Write("Bitte eine Zahl eingeben: ");
+                Zahl2 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Das Ergebnis ist: ");
+                Console.WriteLine(Convert.ToString(rechnen(Zahl1, Operant, Zahl2)));
+                Console.WriteLine();
+                Console.Write("Wollen sie das Programm erneut asuführen (\"Y\"/\"Ja\")? ");
+                if (Console.ReadLine() == "Y" || Console.ReadLine() == "Ja")
+                {
+                    Weiter = true;
+                }
+            } while (Weiter);
         }
         /// <summary>
         /// Erstellt an einer belibigen Stelle eine Überschrift
